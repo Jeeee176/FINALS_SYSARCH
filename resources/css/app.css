@@ -1,0 +1,184 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-sans:
+        'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-destructive-strong: var(--destructive-strong);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-input-border: var(--input-border);
+    --color-ring: var(--ring);
+
+    --color-success: var(--success);
+    --color-success-foreground: var(--success-foreground);
+    --color-success-strong: var(--success-strong);
+    --color-warning: var(--warning);
+    --color-warning-foreground: var(--warning-foreground);
+    --color-warning-strong: var(--warning-strong);
+    --color-primary-strong: var(--primary-strong);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+    --background: #fafaf7;
+    --foreground: #7f1d1d;
+    --card: #fff8ee;
+    --card-foreground: #7f1d1d;
+    --popover: #fff8ee;
+    --popover-foreground: #7f1d1d;
+    --primary: #d63635;
+    --primary-foreground: #ffffff;
+    --secondary: #fff3e0;
+    --secondary-foreground: #b52b2b;
+    --muted: #fff3e0;
+    --muted-foreground: #866565;
+    --accent: #fff3e0;
+    --accent-foreground: #b52b2b;
+    --destructive: #d62828;
+    --destructive-foreground: #ffffff;
+    --border: #ede3d5;
+    --input: #ede3d5;
+    --ring: #e12b2b;
+
+    /* Form-control outlines are meaningful non-text boundaries (WCAG 1.4.11),
+       so they get their own token instead of sharing the deliberately faint
+       --border used for cards, dividers and other decorative edges. */
+    --input-border: #a38770;
+    --chart-1: #d63635;
+    --chart-2: #f4b400;
+    --chart-3: #b52b2b;
+    --chart-4: #4caf50;
+    --chart-5: #8b6b6b;
+    --radius: 0.625rem;
+    --sidebar: #d63635;
+    --sidebar-foreground: #ffffff;
+    --sidebar-primary: #b52b2b;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #b52b2b;
+    --sidebar-accent-foreground: #ffffff;
+    --sidebar-border: #b52b2b;
+    --sidebar-ring: #fff3e0;
+
+    /* status tokens: solid fills pair with a foreground that clears WCAG AA */
+    --success: #2e7d32;
+    --success-foreground: #ffffff;
+    --success-strong: #27632b;
+    --warning: #f4b400;
+    --warning-foreground: #1a1400;
+
+    /* "on a tinted background" variants: darker/lighter than the fill so text
+       still clears 4.5:1 once the 10-15% tint is composited underneath */
+    --primary-strong: #b52b2b;
+    --destructive-strong: #c11f1f;
+    --warning-strong: #a35a00;
+}
+
+.dark {
+    --background: #1a0e0e;
+    --foreground: #fff3e0;
+    --card: #261515;
+    --card-foreground: #fff3e0;
+    --popover: #261515;
+    --popover-foreground: #fff3e0;
+    --primary: #d63635;
+    --primary-foreground: #ffffff;
+    --secondary: #341a1a;
+    --secondary-foreground: #fff3e0;
+    --muted: #2e1717;
+    --muted-foreground: #c9a8a8;
+    --accent: #341a1a;
+    --accent-foreground: #fff3e0;
+    --destructive: #d62828;
+    --destructive-foreground: #ffffff;
+    --border: #3b1f1f;
+    --input: #3b1f1f;
+    --ring: #e12b2b;
+
+    /* control outline tuned for the dark backdrop (>=3:1 vs page and card) */
+    --input-border: #8d5c5c;
+    --chart-1: #e12b2b;
+    --chart-2: #f4b400;
+    --chart-3: #d63635;
+    --chart-4: #4caf50;
+    --chart-5: #c9a8a8;
+    --sidebar: #7f1d1d;
+    --sidebar-foreground: #fff3e0;
+    --sidebar-primary: #d63635;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #b52b2b;
+    --sidebar-accent-foreground: #ffffff;
+    --sidebar-border: #b52b2b;
+    --sidebar-ring: #fff3e0;
+
+    /* same semantic roles as :root, tuned for a dark backdrop */
+    --success: #2e7d32;
+    --success-foreground: #ffffff;
+    --success-strong: #7ac74f;
+    --warning: #f4b400;
+    --warning-foreground: #1a1400;
+    --warning-strong: #f4b400;
+    --primary-strong: #ef5350;
+    --destructive-strong: #ef5350;
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
